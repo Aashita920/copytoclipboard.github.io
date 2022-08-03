@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-image: linear-gradient(to left, lightblue, lightyellow );
+            font-family: century;
+        }
+        center{
+            margin: 5%;
+        }
+        h2{
+            text-decoration: underline;
+            font-size: xx-large;
+           
+        }
+        #copybtn , #resetbtn{
+            font-size: 18px;
+            color: coral;
+            background-color: white;
+            border: none;
+        }
+        #copybtn:hover, #resetbtn:hover{
+            font-size: 20px;
+            color: black;
+            border: 2px blue dotted ;
+        }
+
+
+    </style>
+</head>
+<body>
+    <center>
+    <h2 id="title">Copy to Clipboard</h2>
+    <br>
+    <textarea name="" id="texthere" cols="30" rows="10" placeholder="Enter text here....."></textarea>
+    
+    <br><br>
+    <button id="copybtn">Copy</button>
+    <br><br>
+    <button id="resetbtn">Reset</button>
+    <br><br>
+    <textarea name="" id="" cols="30" rows="10" placeholder="Paste here....."></textarea>
+</center>
+</body>
+<script type="text/javascript">
+    const texthere = document.getElementById('texthere');
+    const copybtn = document.getElementById('copybtn');
+    const resetbtn = document.getElementById('resetbtn');
+    texthere.value = '';
+    copybtn.onclick = function(){
+        texthere.select();
+        document.execCommand("Copy");
+        texthere.value = '';
+        const status = document.getElementById('status');
+        
+}
+    resetbtn.onclick = function(){
+        texthere.value = '';
+    }
+</script>
+</html>
